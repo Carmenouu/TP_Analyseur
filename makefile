@@ -1,8 +1,8 @@
 all: analyseur
 
 
-analyse: lexer.o symbole.o etat.o automate.o main.o
-	g++ -o analyse lexer.o symbole.o etat.o automate.o main.o
+analyseur: lexer.o symbole.o etat.o automate.o main.o
+	g++ -o analyseur lexer.o symbole.o etat.o automate.o main.o
 
 lexer.o: lexer.cpp lexer.h
 	g++ -o lexer.o -c lexer.cpp
@@ -22,5 +22,5 @@ main.o: main.cpp symbole.h lexer.h etat.h
 clean:
 	rm -rf *.o
 
-mrproper: clean
+cleanall: clean
 	rm -rf analyseur
