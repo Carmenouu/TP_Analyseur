@@ -4,21 +4,18 @@
 
 
 int main(void) {
-   string chaine("(1+34)*123");
+   string chaine;
+   bool fini;
+   do {
+      cout << "Entrez une expression à analyser :" <<endl ;
+      cin >> chaine;
 
-/**   Lexer l(chaine);
+      Automate *automate = new Automate(chaine);
 
-   Symbole * s;
-   while(*(s=l.Consulter())!=FIN) {
-      s->Affiche();
-      cout<<endl;
-      l.Avancer();
-   }
-*/
-
-   Automate *automate = new Automate(chaine);
-
-   automate->run();
+      fini = automate->run();
+   } while (!fini);
+   
+   cout << "Bisous !" << endl ;
    return 0;
 }
 

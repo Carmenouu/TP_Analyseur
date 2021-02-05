@@ -7,7 +7,7 @@ Automate::Automate(string chaine) {
     pileEtats.push(depart);
 }
 
-void Automate::run() {
+bool Automate::run() {
     bool etatSuivant = true;
 
     while (etatSuivant) {
@@ -18,9 +18,11 @@ void Automate::run() {
     if (*pileSymboles.top() != ERREUR) {
 
         int resultat = pileSymboles.top()->getValeur();
-        cout << "Syntaxe correcte." << endl << "Résultat : " << resultat << endl;
+        cout << "Résultat de l'expression : " << resultat << endl;
+        return true ;
     } else {
-        cout << "ERREUR : caractère invalide" << endl;
+        cerr << "ERREUR : l'expression entrée est invalide." << endl << "Veuillez recommencer." << endl << endl ;
+        return false ;
   }
 }
 

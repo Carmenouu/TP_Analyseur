@@ -16,7 +16,7 @@ class Automate {
         Automate(string chaine) ;
 
 // Méthodes :
-        void run() ;
+        bool run() ;
         void decalage(Symbole *s, Etat *e) ;
         void reduction(int n, Symbole *s) ;
     
