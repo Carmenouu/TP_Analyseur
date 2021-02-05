@@ -13,6 +13,7 @@ class Symbole {
       virtual ~Symbole() { }
       operator int() const { return ident; }
       virtual void Affiche();
+      int getValeur();
 
    protected:
       int ident;
@@ -30,6 +31,7 @@ class ParOuvrante : public Symbole {
       ParOuvrante() : Symbole(OPENPAR) { }
       ~ParOuvrante() { }
       virtual void Affiche();
+      int getValeur();
 };
 
 // CLASSE PARENTHESE FERMANTE )
@@ -38,6 +40,7 @@ class ParFermante : public Symbole {
       ParFermante() : Symbole(CLOSEPAR) { }
       ~ParFermante() { }
       virtual void Affiche();
+      int getValeur();
 };
 
 // CLASSE PLUS +
@@ -46,6 +49,7 @@ class Plus : public Symbole {
       Plus() : Symbole(PLUS) { }
       ~Plus() { }
       virtual void Affiche();
+      int getValeur();
 };
 
 // CLASSE MULTIPLICATION *
@@ -54,6 +58,7 @@ class Multiplication : public Symbole {
       Multiplication() : Symbole(MULT) { }
       ~Multiplication() { }
       virtual void Affiche();
+      int getValeur();
 };
 
 // CLASSE ENTIER val
@@ -62,6 +67,8 @@ class Entier : public Symbole {
       Entier(int v) : Symbole(INT), valeur(v) { }
       ~Entier() { }
       virtual void Affiche();
+      int getValeur();
+
    protected:
       int valeur;
 };
@@ -72,6 +79,7 @@ class Fin : public Symbole {
       Fin() : Symbole(FIN) { }
       ~Fin() { }
       virtual void Affiche();
+      int getValeur();
 };
 
 // CLASSE ERREUR E
@@ -80,6 +88,7 @@ class Erreur : public Symbole {
       Erreur() : Symbole(ERREUR) { }
       ~Erreur() { }
       virtual void Affiche();
+      int getValeur();
 };
 
 // CLASSE EXPRESSION EXPR
@@ -88,7 +97,7 @@ public:
   Expression(int val) : Symbole(EXPR), valeur(val) {}
   ~Expression() {}
   virtual void Affiche();
-  int getValue();
+  int getValeur();
 
 protected:
    int valeur;
