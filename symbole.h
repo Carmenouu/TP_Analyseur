@@ -13,7 +13,7 @@ class Symbole {
       virtual ~Symbole() { }
       operator int() const { return ident; }
       virtual void Affiche();
-      int getValeur();
+      virtual int getValeur();
 
    protected:
       int ident;
@@ -93,12 +93,12 @@ class Erreur : public Symbole {
 
 // CLASSE EXPRESSION EXPR
 class Expression : public Symbole {
-public:
-  Expression(int val) : Symbole(EXPR), valeur(val) {}
-  ~Expression() {}
-  virtual void Affiche();
-  int getValeur();
+   public:
+      Expression(int val) : Symbole(EXPR), valeur(val) {}
+      ~Expression() {}
+      virtual void Affiche();
+      int getValeur();
 
-protected:
-   int valeur;
+   protected:
+      int valeur;
 };

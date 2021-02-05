@@ -56,19 +56,19 @@ void Expression::Affiche() {
  * **********************************************************/
 
 int ParOuvrante::getValeur() {
-   Symbole::getValeur();
+   return Symbole::getValeur();
 }
 
 int ParFermante::getValeur() {
-   Symbole::getValeur();
+   return Symbole::getValeur();
 }
 
 int Plus::getValeur() {
-   Symbole::getValeur();
+   return Symbole::getValeur();
 }
 
 int Multiplication::getValeur() {
-   Symbole::getValeur();
+   return Symbole::getValeur();
 }
 
 int Entier::getValeur() {
@@ -76,11 +76,11 @@ int Entier::getValeur() {
 }
 
 int Fin::getValeur() {
-   Symbole::getValeur();
+   return Symbole::getValeur();
 }
 
 int Erreur::getValeur() {
-   Symbole::getValeur();
+   return Symbole::getValeur();
 }
 
 int Expression::getValeur() {
